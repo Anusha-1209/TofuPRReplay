@@ -1,10 +1,4 @@
-terraform {
-  encryption {
-    key_provider "external" "foo" {
-      encrypt_command = ["./some_program", "--encrypt"]
-      decrypt_command = ["./some_program", "--decrypt"]
-      # Optional:
-      keys = key_provider.some.provider
-    }
-  }
+locals {
+cidr_block = "10.0.0.0/19"
+name       = "vpc1"
 }
