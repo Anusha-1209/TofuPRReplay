@@ -5,7 +5,7 @@ provider "aws" {
 
 # Create a VPC
 resource "aws_vpc" "main_vpc" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "10.0.0.0/30"
 
   tags = {
     Name = "main_vpc"
@@ -103,6 +103,7 @@ resource "aws_instance" "web_server" {
     Name = "web_server"
   }
 }
+
 
 # Output the public IP of the EC2 instance
 output "web_server_public_ip" {
